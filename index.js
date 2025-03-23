@@ -9,7 +9,7 @@ const app = express()
 dotenv.config()
 app.use(bodyparser.json())
 app.use(cors())
-const port = process.env.PORT || 3000
+const port =  3000
 // Connection URL
 const url = process.env.MONGO_URI;
 const client = new MongoClient(url);
@@ -44,3 +44,5 @@ app.delete('/', async (req, res) => {
 app.listen(port, () => {
     console.log(`Example app listening on port http://localhost:${port}`)
 })
+
+module.exports = app
